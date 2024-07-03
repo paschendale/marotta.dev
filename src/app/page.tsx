@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-centercenter p-24">
-      <div className="flex md:flex-row flex-col md:w-[90%]  justify-items-center justify-center gap-10">
+      <div className="flex md:flex-row flex-col lg:w-[60%] md:w-[90%]  justify-items-center justify-center gap-10">
         <div className="flex flex-row align-top h-full">
           <img src="me.png" className="w-[150px] object-contain" />
         </div>
