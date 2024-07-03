@@ -1,7 +1,13 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-centercenter p-24">
-      <div className="flex md:flex-row flex-col lg:w-[60%] md:w-[90%]  justify-items-center justify-center gap-10">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4">
+      <div
+        className="
+        flex md:flex-row flex-col
+        w-[90%] md:w-[90%]
+        justify-items-center justify-center
+        gap-10"
+      >
         <div className="flex flex-row align-top h-full">
           <img src="me.png" className="w-[150px] object-contain" />
         </div>
@@ -30,6 +36,23 @@ export default function Home() {
           </p>
         </div>
       </div>
+      {/* <div className="flex">
+        <Carousel>
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              ...
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              ...
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              ...
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div> */}
     </main>
   );
 }
