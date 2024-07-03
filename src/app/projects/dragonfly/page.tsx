@@ -1,5 +1,20 @@
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 import Link from "next/link";
+
+const images = [
+  "/dragonfly-1.png",
+  // "/dragonfly-2.png",
+  // "/dragonfly-3.png",
+  "/dragonfly-4.png",
+  "/dragonfly-5.png",
+];
 
 export default function Dragonfly() {
   return (
@@ -20,9 +35,18 @@ export default function Dragonfly() {
           <span>Go back</span>
         </Button>
       </Link>
-      <div className="flex flex-col lg:flex-row p-4  gap-4">
-        <div className="flex flex-col w-full lg:w-[30%]">
-          <img src="/dragonfly-preview.png" />
+      <div className="flex flex-col lg:flex-row p-4 gap-4">
+        <div className="flex flex-col w-full md:w-[30%]">
+          <p className="text-xl font-semibold">Showcase</p>
+
+          <img src={images[0]} className="flex lg:hidden  mt-7" />
+
+          {/*  */}
+          <div className="hidden lg:flex flex-col mt-7 gap-4">
+            {images.map((e, i) => (
+              <img src={e} key={i} />
+            ))}
+          </div>
         </div>
         <div className="flex flex-col gap-6 w-full lg:w-[40%]">
           <p className="text-xl font-semibold">Dragonfly</p>
@@ -75,7 +99,11 @@ export default function Dragonfly() {
         </div>
         <div className="flex flex-col w-full lg:w-[30%]">
           <p className="text-xl font-semibold">Links</p>
-          <Link href="https://github.com/paschendale/libelula" target="_blank">
+          <Link
+            href="https://github.com/paschendale/libelula"
+            target="_blank"
+            className=" mt-6"
+          >
             <Button variant="link">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
