@@ -1,0 +1,23 @@
+{
+  "hello": "Olá, eu sou o Victor",
+  "home-text-1": "Sou um desenvolvedor full stack especializado em geotecnologias. Tenho ampla experiência com as principais ferramentas de desenvolvimento frontend como React, Angular, TypeScript e Next.js. Também sou proficiente em bibliotecas de mapas como Mapbox, OpenLayers e Leaflet, e já trabalhei com uma variedade de frameworks de backend, incluindo Spring, Play Framework, Django, Express.js e Nest.js.",
+  "home-text-2": "Me formei em Engenharia de Agrimensura e Cartográfica na Universidade Federal de Viçosa, tenho um Mestrado em Engenharia Civil com foco em Informações Espaciais, e atualmente estou cursando um doutorado em Engenharia Civil, também com foco em Informações Espaciais.",
+  "home-text-3": "Atualmente, estou trabalhando como analista de requisitos em uma empresa de engenharia cartográfica no Brasil, mas estou aberto a oportunidades de freelance tanto no Brasil quanto no exterior.",
+  "check-out-projects": "Confira meus últimos projetos",
+  "project-dragonfly-title": "Libélula",
+  "project-dragonfly-description": "Libelula é uma plataforma de geointeligência focada no combate a arboviroses endêmicas do Brasil, como dengue, Zika e chikungunya.",
+  "project-geoportal-itabirito-title": "Geoportal Itabirito",
+  "project-geoportal-itabirito-description": "O Geoportal Itabirito é uma plataforma inovadora que consolida dados do Cadastro Territorial Multifinalitário do município de Itabirito.",
+  "showcase": "Demonstração",
+  "links": "Links",
+  "go-back": "Voltar",
+  "project-dragonfly": "Libélula",
+  "project-dragonfly-intro": "Na cultura popular, as libélulas são conhecidas por se alimentarem de larvas de mosquito que transmitem arboviroses. Inspirada nesse conceito, a Libelula Geoanalytics é uma plataforma desenvolvida para ajudar os municípios a combater arboviroses mapeando locais de surtos e casos de doenças através de imagens aéreas capturadas por drones. Isso permite o monitoramento em tempo real de estatísticas e análises sobre a progressão dessas doenças.",
+  "project-dragonfly-dev": "Libelula foi desenvolvida como um ecossistema: possui um frontend em React, dois backends — um para provisionamento de dados usando Express.js e outro para autenticação OAuth usando Django REST Framework — além de componentes adicionais como um servidor pg_tileserv e um banco de dados PostGIS para fornecer tiles em formato MVT.",
+  "project-dragonfly-frontend": "No frontend, utilizei a biblioteca react-map-gl para renderização de mapas com Mapbox e a biblioteca Highcharts para renderização de gráficos. Os componentes da UI foram gerenciados pelo Chakra UI, e toda a interface foi projetada em modo escuro para dar ao sistema um visual moderno.",
+  "project-dragonfly-backend": "Para o backend, escolhi a combinação de Express.js e Prisma para implementar uma API de dados com tipagem forte e velocidade de desenvolvimento rápida. Para a API de gerenciamento de autenticação, usei o Django REST Framework junto com o Django OAuth Toolkit para acelerar a implantação de um sistema de autenticação de usuários de ponta.",
+  "project-dragonfly-mobile": "Libelula Geoanalytics também inclui um módulo móvel, desenvolvido como um projeto separado.",
+  "project-dragonfly-contract": "Neste projeto, fui contratado por uma empresa de engenharia brasileira para desenvolver todos os aspectos relacionados à plataforma: o design, desenvolvimento, metodologia de coleta de dados e implantação na nuvem.",
+  "project-dragonfly-deployment": "Atualmente, a plataforma está implantada em vários municípios com um pipeline GitOps em todo o ecossistema, atualizando aplicativos e infraestrutura usando o conceito de Infrastructure as Code. Todas as aplicações são conteinerizadas e implantadas no Docker Swarm com Portainer."
+
+}

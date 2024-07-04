@@ -1,0 +1,22 @@
+{
+  "hello": "Hello, I'm Victor",
+  "home-text-1": "I'm a full stack developer specializing in geotechnologies. I have extensive experience with major frontend development tools like React, Angular, TypeScript, and Next.js. I'm also proficient in map libraries such as Mapbox, OpenLayers, and Leaflet, and have worked with a variety of backend frameworks including Spring, Play Framework, Django, Express.js, and Nest.js.",
+  "home-text-2": "I graduated with a degree in Surveying and Cartographic Engineering in Universidade Federal de Viçosa, hold a Master's degree in Civil Engineering with a focus on Spatial Information, and I'm currently pursuing a Ph.D. in Civil Engineering, also focusing on Spatial Information.",
+  "home-text-3": "Right now, I'm working as a requirements analyst at a cartographic engineering company in Brazil, but I'm open to freelancing opportunities both in Brazil and abroad.",
+  "check-out-projects": "Checkout my latest projects",
+  "project-dragonfly-title": "Dragonfly",
+  "project-dragonfly-description": "Dragonfly is a geointelligence platform focused on combating arboviruses endemic to Brazil, such as dengue, Zika, and chikungunya.",
+  "project-geoportal-itabirito-title": "Geoportal Itabirito",
+  "project-geoportal-itabirito-description": "The Geoportal Itabirito is an innovative platform that consolidates data from the Multipurpose Territorial Cadastre of the municipality of Itabirito.",
+  "showcase": "Showcase",
+  "links": "Links",
+  "go-back": "Go back",
+  "project-dragonfly": "Dragonfly",
+  "project-dragonfly-intro": "Na cultura popular, as libélulas são conhecidas por se alimentarem de larvas de mosquito que transmitem arboviroses. Inspirada nesse conceito, a Dragonfly GeoAnalytics é uma plataforma desenvolvida para ajudar os municípios a combater arboviroses mapeando locais de surtos e casos de doenças através de imagens aéreas capturadas por drones. Isso permite o monitoramento em tempo real de estatísticas e análises sobre a progressão dessas doenças.",
+  "project-dragonfly-dev": "Dragonfly foi desenvolvida como um ecossistema: possui um frontend em React, dois backends—um para provisionamento de dados usando Express.js e outro para autenticação OAuth usando Django REST Framework—além de componentes adicionais como um servidor pg_tileserv e um banco de dados PostGIS para fornecer tiles em formato MVT.",
+  "project-dragonfly-frontend": "No frontend, utilizei a biblioteca react-map-gl para renderização de mapas com Mapbox e a biblioteca Highcharts para renderização de gráficos. Os componentes da UI foram gerenciados pelo Chakra UI, e toda a interface foi projetada em modo escuro para dar ao sistema um visual moderno.",
+  "project-dragonfly-backend": "Para o backend, escolhi a combinação de Express.js e Prisma para implementar uma API de dados com tipagem forte e velocidade de desenvolvimento rápida. Para a API de gerenciamento de autenticação, usei o Django REST Framework junto com o Django OAuth Toolkit para acelerar a implantação de um sistema de autenticação de usuários de ponta.",
+  "project-dragonfly-mobile": "Dragonfly GeoAnalytics também inclui um módulo móvel, desenvolvido como um projeto separado.",
+  "project-dragonfly-contract": "Neste projeto, fui contratado por uma empresa de engenharia brasileira para desenvolver todos os aspectos relacionados à plataforma: o design, desenvolvimento, metodologia de coleta de dados e implantação na nuvem.",
+  "project-dragonfly-deployment": "Atualmente, a plataforma está implantada em vários municípios com um pipeline GitOps em todo o ecossistema, atualizando aplicativos e infraestrutura usando o conceito de Infrastructure as Code. Todas as aplicações são conteinerizadas e implantadas no Docker Swarm com Portainer."
+}

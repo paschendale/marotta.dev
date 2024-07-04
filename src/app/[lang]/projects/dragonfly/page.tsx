@@ -6,6 +6,8 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import { getDictionary } from "@/dictionaries";
+import { LangProps } from "@/interfaces";
 import Link from "next/link";
 
 const images = [
@@ -16,10 +18,13 @@ const images = [
   "/dragonfly-5.png",
 ];
 
-export default function Dragonfly() {
+export default async function Dragonfly({ params: { lang } }: LangProps) {
+  
+  const intl = await getDictionary(lang);
+
   return (
     <div className="flex flex-col">
-      <Link href="/">
+      <Link href={"/" + lang}>
         <Button variant={"link"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,12 +37,12 @@ export default function Dragonfly() {
               d="m7.825 13l5.6 5.6L12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2z"
             ></path>
           </svg>
-          <span>Go back</span>
+          <span>{ intl["go-back"] }</span>
         </Button>
       </Link>
       <div className="flex flex-col lg:flex-row p-4 gap-4">
         <div className="flex flex-col w-full md:w-[30%]">
-          <p className="text-xl font-semibold">Showcase</p>
+          <p className="text-xl font-semibold">{ intl["showcase"] }</p>
 
           <img src={images[0]} className="flex lg:hidden  mt-7" />
 
@@ -49,56 +54,24 @@ export default function Dragonfly() {
           </div>
         </div>
         <div className="flex flex-col gap-6 w-full lg:w-[40%]">
-          <p className="text-xl font-semibold">Dragonfly</p>
+          <p className="text-xl font-semibold">{intl["project-dragonfly"]}</p>
 
-          <p>
-            In popular culture, dragonflies are known for preying on mosquito
-            larvae that transmit arboviruses. Inspired by this concept,
-            Dragonfly GeoAnalytics is a platform developed to help
-            municipalities combat arboviruses by mapping outbreak sites and
-            disease cases through aerial images captured by drones. This allows
-            for real-time monitoring of statistics and analysis on the
-            progression of these diseases.
-          </p>
-          <p>
-            Dragonfly was developed as an ecosystem: it features a React
-            frontend, two backends—one for data provision using Express.js and
-            another for OAuth authentication using Django REST Framework—along
-            with additional components like a pg_tileserv server and a PostGIS
-            database to provide tiles in MVT format.
-          </p>
-          <p>
-            On the frontend, I utilized the react-map-gl library for rendering
-            maps with Mapbox and the Highcharts library for chart rendering. UI
-            components were handled by Chakra UI, and the entire interface was
-            designed in dark mode to give the system a modern look.
-          </p>
-          <p>
-            For the backend, I chose the combination of Express.js and Prisma to
-            implement a data API with strong typing and rapid development speed.
-            For the authentication management API, I used Django REST Framework
-            along with Django OAuth Toolkit to accelerate the deployment of a
-            cutting-edge user authentication system.
-          </p>
-          <p>
-            Dragonfly GeoAnalytics also includes a mobile module, developed as a
-            separate project.
-          </p>
-          <p>
-            In this project, I was contracted by a Brazilian engineering company
-            to develop all aspects related to the platform: the design,
-            development, methodology for data collection, and cloud deployment.
-          </p>
-          <p>
-            Currently, the platform is deployed for various municipalities with
-            a GitOps pipeline across the entire ecosystem, updating applications
-            and infrastructure using the concept of Infrastructure as Code. All
-            applications are containerized and deployed in Docker Swarm with
-            Portainer.
-          </p>
+          <p>{intl["project-dragonfly-intro"]}</p>
+          
+          <p>{intl["project-dragonfly-dev"]}</p>
+          
+          <p>{intl["project-dragonfly-frontend"]}</p>
+          
+          <p>{intl["project-dragonfly-backend"]}</p>
+          
+          <p>{intl["project-dragonfly-mobile"]}</p>
+          
+          <p>{intl["project-dragonfly-contract"]}</p>
+          
+          <p>{intl["project-dragonfly-deployment"]}</p>
         </div>
         <div className="flex flex-col w-full lg:w-[30%]">
-          <p className="text-xl font-semibold">Links</p>
+          <p className="text-xl font-semibold">{intl["links"]}</p>
           <Link
             href="https://github.com/paschendale/libelula"
             target="_blank"
