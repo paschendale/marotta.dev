@@ -3,6 +3,8 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SwitchLang from "@/components/ui/switch-lang";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <GoogleAnalytics gaId="GTM-5PGF26TQ" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
-      ></meta>
-      <body className={inter.className}>
+      />
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -32,7 +35,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="absolute top-4 right-4">
-            <ModeToggle></ModeToggle>
+            <div className="flex flex-row gap-2">
+              <SwitchLang/>
+              <ModeToggle/>
+            </div>
           </div>
           {children}
         </ThemeProvider>
