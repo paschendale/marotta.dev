@@ -3,7 +3,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SwitchLang from "@/components/ui/switch-lang";
+// import SwitchLang from "@/components/ui/switch-lang";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,7 +36,7 @@ export default function RootLayout({
         >
           <div className="absolute top-4 right-4">
             <div className="flex flex-row gap-2">
-              <SwitchLang/>
+              {/* <SwitchLang/> */}
               <ModeToggle/>
             </div>
           </div>

@@ -122,6 +122,14 @@ export default async function Home({ params: { lang } }: LangProps) {
             </CarouselItem>
             <CarouselItem>
               <PortfolioItem
+                title={intl["project-geoserver-title"]}
+                description={intl["project-geoserver-description"]}
+                image={<img src="geoserver-mobile-client-1.png" />}
+                link={`/${lang}/projects/geoserver-mobile-client`}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <PortfolioItem
                 title={intl["project-geoportal-itabirito-title"]}
                 description={intl["project-geoportal-itabirito-description"]}
                 image={<img src="geoportal-itabirito-preview.png" />}
