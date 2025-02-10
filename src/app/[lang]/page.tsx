@@ -114,6 +114,14 @@ export default async function Home({ params: { lang } }: LangProps) {
           <CarouselContent>
             <CarouselItem>
               <PortfolioItem
+                title={intl["skyforest-title"]}
+                description={intl["skyforest-intro"]}
+                image={<img src="skyforest-1.png" />}
+                link={`/${lang}/projects/skyforest`}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <PortfolioItem
                 title={intl["project-dragonfly-title"]}
                 description={intl["project-dragonfly-description"]}
                 image={<img src="dragonfly-preview.png" />}
