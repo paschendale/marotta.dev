@@ -1,4 +1,5 @@
 import PortfolioItem from "@/components/portfolio-item";
+import SocialLinks from "@/components/social-links";
 import {
   Carousel,
   CarouselContent,
@@ -6,117 +7,159 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { getDictionary, Locale } from "@/dictionaries";
+import { getDictionary } from "@/dictionaries";
 import { LangProps } from "@/interfaces";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home({ params: { lang } }: LangProps) {
   const intl = await getDictionary(lang);
   
+  const skills = {
+    frontend: ["React", "Next.js", "Angular", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS", "Cesium", "Three.JS", "Potree"],
+    backend: ["Node.js", "Express.js", "Nest.js", "Python", "FastAPI", "Django", "PostgreSQL", "MongoDB"],
+    geospatial: ["Mapbox", "OpenLayers", "Leaflet", "GeoServer", "PostGIS", "GDAL", "PDAL", "Entwine", "tippecanoe", "Geopandas"],
+    tools: ["Docker", "Git", "Redis", "AWS", "Linux", "CI/CD", "GitOps", "n8n", "Argo Workflows", "Kubernetes", "Bare Metal Infrastructure", "Networking"]
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-10 max-w-full">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-10 max-w-full scroll-smooth">
       <div
         className="
         flex md:flex-row flex-col
         w-[90%] xl:w-[60%]
         justify-items-center justify-center
-        gap-10"
+        gap-10
+        animate-in fade-in duration-700"
       >
-        <div className="flex flex-row align-top h-full">
-          <img src="me.png" className="w-[150px] object-contain" />
+        <div className="flex flex-row align-middle justify-center h-full">
+          <Image 
+            src="/me.png" 
+            alt="Victor Marotta - Full Stack Developer" 
+            width={150} 
+            height={150}
+            sizes="150px"
+            className="w-[150px] h-auto object-contain rounded-lg shadow-lg"
+            priority
+          />
         </div>
-        <div className="md:w-[50%] w-[95%] flex flex-col gap-4">
-          <p className="text-xl font-semibold">{intl["hello"]}</p>
-          <p>
+        <div className="w-[95%] flex flex-col gap-4">
+          <h1 className="text-xl font-semibold">{intl["hello"]}</h1>
+          <p className="text-foreground/90 leading-relaxed">
             {intl["home-text-1"]}
           </p>
-          <p>
+          <p className="text-foreground/90 leading-relaxed">
             {intl["home-text-2"]}
           </p>
-          <p>
+          <p className="text-foreground/90 leading-relaxed">
             {intl["home-text-3"]}
           </p>
-          <div className="flex flex-row gap-3">
-            <Link
-              className="cursor-pointer"
-              href="https://www.upwork.com/freelancers/~0147000a5df1523439"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="32"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M56 32h336c30.9 0 56 25.1 56 56v336c0 30.9-25.1 56-56 56H56c-30.9 0-56-25.1-56-56V88c0-30.9 25.1-56 56-56m214.9 242.2c6.6-52.9 25.9-69.5 51.4-69.5c25.3 0 44.9 20.2 44.9 49.7s-19.7 49.7-44.9 49.7c-27.9 0-46.3-21.5-51.4-29.9m-26.7-41.8c-8.2-15.5-14.3-36.3-19.2-55.6h-62.9v78.1c0 28.4-12.9 49.4-38.2 49.4S84.1 283.4 84.1 255l.3-78.1H48.2V255c0 22.8 7.4 43.5 20.9 58.2c13.9 15.2 32.8 23.2 54.8 23.2c43.7 0 74.2-33.5 74.2-81.5v-52.5c4.6 17.3 15.4 50.5 36.2 79.7L215 392.6h36.8l12.8-78.4c4.2 3.5 8.7 6.6 13.4 9.4c12.3 7.8 26.4 12.2 40.9 12.6h3.4c45.1 0 80.9-34.9 80.9-81.9s-35.9-82.2-80.9-82.2c-45.4 0-70.9 29.7-78.1 60.1z"
-                />
-              </svg>
-            </Link>
-            <Link
-              className="cursor-pointer"
-              href="https://www.linkedin.com/in/victor-marotta-5055ab60/"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="31"
-                height="31"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M1 2.838A1.838 1.838 0 0 1 2.838 1H21.16A1.837 1.837 0 0 1 23 2.838V21.16A1.838 1.838 0 0 1 21.161 23H2.838A1.838 1.838 0 0 1 1 21.161zm8.708 6.55h2.979v1.496c.43-.86 1.53-1.634 3.183-1.634c3.169 0 3.92 1.713 3.92 4.856v5.822h-3.207v-5.106c0-1.79-.43-2.8-1.522-2.8c-1.515 0-2.145 1.089-2.145 2.8v5.106H9.708zm-5.5 10.403h3.208V9.25H4.208zM7.875 5.812a2.063 2.063 0 1 1-4.125 0a2.063 2.063 0 0 1 4.125 0"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </Link>
-            <Link
-             href="https://github.com/paschendale"
-             target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91c.575.101.79-.244.79-.546c0-.273-.014-1.178-.014-2.142c-2.889.532-3.636-.704-3.866-1.35c-.13-.331-.69-1.352-1.18-1.625c-.402-.216-.977-.748-.014-.762c.906-.014 1.553.834 1.769 1.179c1.035 1.74 2.688 1.25 3.349.948c.1-.747.402-1.25.733-1.538c-2.559-.287-5.232-1.279-5.232-5.678c0-1.25.445-2.285 1.178-3.09c-.115-.288-.517-1.467.115-3.048c0 0 .963-.302 3.163 1.179c.92-.259 1.897-.388 2.875-.388c.977 0 1.955.13 2.875.388c2.2-1.495 3.162-1.179 3.162-1.179c.633 1.581.23 2.76.115 3.048c.733.805 1.179 1.825 1.179 3.09c0 4.413-2.688 5.39-5.247 5.678c.417.36.776 1.05.776 2.128c0 1.538-.014 2.774-.014 3.162c0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25C24 5.896 18.854.75 12.5.75"
-                />
-              </svg>
-            </Link>
-          </div>
+          <SocialLinks />
         </div>
       </div>
-      <div
+
+      {/* Skills Section */}
+      <section 
         className="
         flex flex-col
         justify-items-center justify-center
-        w-[80%] md:w-[80%]
-        gap-10
+        w-[90%] xl:w-[60%]
+        gap-6
+        mt-16
+        animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300
       "
+        aria-labelledby="skills-heading"
       >
-        <p
-          className="
-          text-xl font-semibold
-          w-full
-          text-center
-          mt-10
-        "
-        >
+        <h2 id="skills-heading" className="text-xl font-semibold text-center">
+          {intl["skills-title"]}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-3">
+            <h3 className="font-semibold text-lg">{intl["frontend"]}</h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.frontend.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm transition-transform hover:scale-105"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h3 className="font-semibold text-lg">{intl["backend"]}</h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.backend.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm transition-transform hover:scale-105"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h3 className="font-semibold text-lg">{intl["geospatial"]}</h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.geospatial.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm transition-transform hover:scale-105"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h3 className="font-semibold text-lg">{intl["tools"]}</h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.tools.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm transition-transform hover:scale-105"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        className="
+        flex flex-col
+        justify-items-center justify-center
+        w-[90%] xl:w-[60%]
+        gap-10
+        mt-16
+        animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500
+      "
+        aria-labelledby="projects-heading"
+      >
+        <h2 id="projects-heading" className="text-xl font-semibold text-center">
           {intl["check-out-projects"]}
-        </p>
-        <Carousel>
+        </h2>
+        <Carousel className="w-full">
           <CarouselContent>
             <CarouselItem>
               <PortfolioItem
                 title={intl["skyforest-title"]}
                 description={intl["skyforest-intro"]}
-                image={<img src="skyforest-1.png" />}
+                image={
+                  <Image 
+                    src="/skyforest-1.png" 
+                    alt="Skyforest project showcase" 
+                    width={600} 
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-contain rounded-lg"
+                  />
+                }
                 link={`/${lang}/projects/skyforest`}
               />
             </CarouselItem>
@@ -124,7 +167,16 @@ export default async function Home({ params: { lang } }: LangProps) {
               <PortfolioItem
                 title={intl["project-dragonfly-title"]}
                 description={intl["project-dragonfly-description"]}
-                image={<img src="dragonfly-preview.png" />}
+                image={
+                  <Image 
+                    src="/dragonfly-preview.png" 
+                    alt="Dragonfly project showcase" 
+                    width={600} 
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-contain rounded-lg"
+                  />
+                }
                 link={`/${lang}/projects/dragonfly`}
               />
             </CarouselItem>
@@ -132,22 +184,129 @@ export default async function Home({ params: { lang } }: LangProps) {
               <PortfolioItem
                 title={intl["project-geoserver-title"]}
                 description={intl["project-geoserver-description"]}
-                image={<img src="geoserver-mobile-client-1.png" />}
+                image={
+                  <Image 
+                    src="/geoserver-mobile-client-1.png" 
+                    alt="Geoserver Mobile Client project showcase" 
+                    width={600} 
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-contain rounded-lg"
+                  />
+                }
                 link={`/${lang}/projects/geoserver-mobile-client`}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <PortfolioItem
+                title={intl["project-pointcloud-title"]}
+                description={intl["project-pointcloud-description"]}
+                image={
+                  <Image 
+                    src="/pointcloud-processing.png" 
+                    alt="Point Cloud Publishing Automation project showcase" 
+                    width={400} 
+                    height={300}
+                    sizes="(max-width: 768px) 80vw, 400px"
+                    className="object-contain rounded-lg max-w-[400px] mx-auto"
+                  />
+                }
+                link={`/${lang}/projects/pointcloud-automation`}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <PortfolioItem
+                title={intl["project-territorial-title"]}
+                description={intl["project-territorial-description"]}
+                image={
+                  <Image 
+                    src="/territorial-maps.png" 
+                    alt="Territorial Maps project showcase" 
+                    width={400} 
+                    height={300}
+                    sizes="(max-width: 768px) 80vw, 400px"
+                    className="object-contain rounded-lg max-w-[400px] mx-auto"
+                  />
+                }
+                link={`/${lang}/projects/territorial-maps`}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <PortfolioItem
+                title={intl["project-geo360-title"]}
+                description={intl["project-geo360-description"]}
+                image={
+                  <Image 
+                    src="/geo360-ladm-preview.png" 
+                    alt="Geo360 LADM project showcase" 
+                    width={400} 
+                    height={300}
+                    sizes="(max-width: 768px) 80vw, 400px"
+                    className="object-contain rounded-lg max-w-[400px] mx-auto"
+                  />
+                }
+                link={`/${lang}/projects/geo360-ladm`}
               />
             </CarouselItem>
             <CarouselItem>
               <PortfolioItem
                 title={intl["project-geoportal-itabirito-title"]}
                 description={intl["project-geoportal-itabirito-description"]}
-                image={<img src="geoportal-itabirito-preview.png" />}
+                image={
+                  <Image 
+                    src="/geoportal-itabirito-preview.png" 
+                    alt="Geoportal Itabirito project showcase" 
+                    width={600} 
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-contain rounded-lg"
+                  />
+                }
               />
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-      </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        className="
+        flex flex-col
+        justify-items-center justify-center
+        w-[90%] xl:w-[60%]
+        gap-4
+        mt-16 mb-10
+        animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700
+      "
+        aria-labelledby="contact-heading"
+      >
+        <h2 id="contact-heading" className="text-xl font-semibold text-center">
+          {intl["contact-title"]}
+        </h2>
+        <p className="text-center text-foreground/90">
+          {intl["contact-text"]}
+        </p>
+        <div className="flex flex-row gap-4 justify-center items-center flex-wrap">
+          <Link
+            href="mailto:victor@marotta.dev"
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-md transition-transform hover:scale-105 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            aria-label="Send email to Victor Marotta"
+          >
+            {intl["email"]}
+          </Link>
+          <Link
+            href="https://territorial.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-secondary text-secondary-foreground rounded-md transition-transform hover:scale-105 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            aria-label="Visit Territorial.dev consulting firm"
+          >
+            Territorial.dev
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

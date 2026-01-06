@@ -1,0 +1,60 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pointcloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#pointcloudGrad)"/>
+  <g opacity="0.8">
+    <!-- Point cloud visualization representation -->
+    <circle cx="150" cy="100" r="2" fill="#60a5fa" opacity="0.9"/>
+    <circle cx="180" cy="120" r="2" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="200" cy="90" r="2" fill="#60a5fa" opacity="0.9"/>
+    <circle cx="220" cy="110" r="2" fill="#60a5fa" opacity="0.7"/>
+    <circle cx="240" cy="100" r="2" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="260" cy="130" r="2" fill="#60a5fa" opacity="0.9"/>
+    <circle cx="280" cy="95" r="2" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="300" cy="115" r="2" fill="#60a5fa" opacity="0.9"/>
+    <circle cx="320" cy="105" r="2" fill="#60a5fa" opacity="0.7"/>
+    <circle cx="340" cy="125" r="2" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="360" cy="100" r="2" fill="#60a5fa" opacity="0.9"/>
+    <circle cx="380" cy="120" r="2" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="400" cy="110" r="2" fill="#60a5fa" opacity="0.9"/>
+    <circle cx="420" cy="95" r="2" fill="#60a5fa" opacity="0.7"/>
+    <circle cx="440" cy="115" r="2" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="150" cy="200" r="2" fill="#93c5fd" opacity="0.9"/>
+    <circle cx="180" cy="220" r="2" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="200" cy="190" r="2" fill="#93c5fd" opacity="0.9"/>
+    <circle cx="220" cy="210" r="2" fill="#93c5fd" opacity="0.7"/>
+    <circle cx="240" cy="200" r="2" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="260" cy="230" r="2" fill="#93c5fd" opacity="0.9"/>
+    <circle cx="280" cy="195" r="2" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="300" cy="215" r="2" fill="#93c5fd" opacity="0.9"/>
+    <circle cx="320" cy="205" r="2" fill="#93c5fd" opacity="0.7"/>
+    <circle cx="340" cy="225" r="2" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="360" cy="200" r="2" fill="#93c5fd" opacity="0.9"/>
+    <circle cx="380" cy="220" r="2" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="400" cy="210" r="2" fill="#93c5fd" opacity="0.9"/>
+    <circle cx="420" cy="195" r="2" fill="#93c5fd" opacity="0.7"/>
+    <circle cx="440" cy="215" r="2" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="150" cy="300" r="2" fill="#dbeafe" opacity="0.9"/>
+    <circle cx="180" cy="320" r="2" fill="#dbeafe" opacity="0.8"/>
+    <circle cx="200" cy="290" r="2" fill="#dbeafe" opacity="0.9"/>
+    <circle cx="220" cy="310" r="2" fill="#dbeafe" opacity="0.7"/>
+    <circle cx="240" cy="300" r="2" fill="#dbeafe" opacity="0.8"/>
+    <circle cx="260" cy="330" r="2" fill="#dbeafe" opacity="0.9"/>
+    <circle cx="280" cy="295" r="2" fill="#dbeafe" opacity="0.8"/>
+    <circle cx="300" cy="315" r="2" fill="#dbeafe" opacity="0.9"/>
+    <circle cx="320" cy="305" r="2" fill="#dbeafe" opacity="0.7"/>
+    <circle cx="340" cy="325" r="2" fill="#dbeafe" opacity="0.8"/>
+    <circle cx="360" cy="300" r="2" fill="#dbeafe" opacity="0.9"/>
+    <circle cx="380" cy="320" r="2" fill="#dbeafe" opacity="0.8"/>
+    <circle cx="400" cy="310" r="2" fill="#dbeafe" opacity="0.9"/>
+    <circle cx="420" cy="295" r="2" fill="#dbeafe" opacity="0.7"/>
+    <circle cx="440" cy="315" r="2" fill="#dbeafe" opacity="0.8"/>
+  </g>
+  <text x="300" y="200" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">Point Cloud Processing</text>
+  <text x="300" y="230" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" opacity="0.8">n8n • Potree • Automation</text>
+</svg>
+
