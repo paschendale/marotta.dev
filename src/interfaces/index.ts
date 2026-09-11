@@ -5,3 +5,10 @@ export type LangProps = {
     lang: Locale
   }
 }
+
+export type LangSlugProps = {
+  params: {
+    lang: Locale
+    slug: string
+  }
+}

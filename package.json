@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "blog:build": "node scripts/build-blog.mjs",
+    "predev": "node scripts/build-blog.mjs",
+    "prebuild": "node scripts/build-blog.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test scripts/build-blog.test.mjs"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
@@ -16,12 +20,16 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.6",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.400.0",
     "negotiator": "^0.6.3",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

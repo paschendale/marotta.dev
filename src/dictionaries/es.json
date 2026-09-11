@@ -59,5 +59,20 @@
   "project-geo360-intro": "Como ingeniero líder, fui responsable del diseño arquitectónico e implementación técnica del primer sistema compatible con LADM (Land Administration Domain Model) de Brasil. Este proyecto representa un hito significativo en la administración de tierras brasileña, trayendo estándares internacionales a los procesos cadastrales y de registro de tierras del país.",
   "project-geo360-features": "El sistema implementa el estándar ISO 19152 LADM, asegurando interoperabilidad y cumplimiento con las mejores prácticas internacionales para administración de tierras. Trabajando en colaboración con ingenieros de Topocart, desarrollamos una solución integral que maneja relaciones complejas de tenencia de tierras, derechos, restricciones y responsabilidades (RRR) en un formato estandarizado e interoperable.",
   "project-geo360-impact": "La implementación requirió un profundo entendimiento tanto de modelado de datos geoespaciales como de conocimiento del dominio de administración de tierras, combinando experiencia técnica con cumplimiento regulatorio para crear un sistema que sirve como referencia para futuros proyectos de administración de tierras en Brasil.",
-  "project-geo360-technologies": "Tecnologías utilizadas: PostgreSQL, PostGIS, GeoServer, React, Node.js y modelos de datos compatibles con LADM."
+  "project-geo360-technologies": "Tecnologías utilizadas: PostgreSQL, PostGIS, GeoServer, React, Node.js y modelos de datos compatibles con LADM.",
+  "blog": "Blog",
+  "blog-title": "Notas de campo",
+  "blog-intro": "Agrimensura, GIS, bases de datos espaciales y el software a su alrededor — lo que aprendo mientras lo construyo.",
+  "blog-empty": "Nada publicado todavía.",
+  "read-post": "Leer post",
+  "min-read": "min de lectura",
+  "published": "Publicado el",
+  "reading-time": "Tiempo de lectura",
+  "minutes": "minutos",
+  "about-article": "Sobre este artículo",
+  "linkedin-profile": "Perfil de LinkedIn",
+  "share": "Compartir",
+  "copy-link": "Copiar enlace",
+  "link-copied": "Enlace copiado",
+  "contents": "Contenido"
 }

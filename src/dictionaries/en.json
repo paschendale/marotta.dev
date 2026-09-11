@@ -59,5 +59,20 @@
   "project-geo360-intro": "As the lead engineer, I was responsible for the architectural design and technical implementation of Brazil's first LADM (Land Administration Domain Model) compliant system. This project represents a significant milestone in Brazilian land administration, bringing international standards to the country's cadastral and land registry processes.",
   "project-geo360-features": "The system implements the ISO 19152 LADM standard, ensuring interoperability and compliance with international best practices for land administration. Working collaboratively with engineers from Topocart, we developed a comprehensive solution that handles complex land tenure relationships, rights, restrictions, and responsibilities (RRR) in a standardized, interoperable format.",
   "project-geo360-impact": "The implementation required deep understanding of both geospatial data modeling and land administration domain knowledge, combining technical expertise with regulatory compliance to create a system that serves as a reference for future land administration projects in Brazil.",
-  "project-geo360-technologies": "Technologies used: PostgreSQL, PostGIS, GeoServer, React, Node.js, and LADM-compliant data models."
+  "project-geo360-technologies": "Technologies used: PostgreSQL, PostGIS, GeoServer, React, Node.js, and LADM-compliant data models.",
+  "blog": "Blog",
+  "blog-title": "Notes from the field",
+  "blog-intro": "Surveying, GIS, spatial databases and the software around them — what I learn while building it.",
+  "blog-empty": "Nothing published yet.",
+  "read-post": "Read post",
+  "min-read": "min read",
+  "published": "Published",
+  "reading-time": "Reading time",
+  "minutes": "minutes",
+  "about-article": "About this article",
+  "linkedin-profile": "View LinkedIn profile",
+  "share": "Share",
+  "copy-link": "Copy link",
+  "link-copied": "Link copied",
+  "contents": "Contents"
 }
