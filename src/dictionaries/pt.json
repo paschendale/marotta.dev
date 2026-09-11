@@ -59,6 +59,20 @@
   "project-geo360-intro": "Como engenheiro líder, fui responsável pelo design arquitetônico e implementação técnica do primeiro sistema compatível com LADM (Land Administration Domain Model) do Brasil. Este projeto representa um marco significativo na administração de terras brasileira, trazendo padrões internacionais para os processos cadastrais e de registro de terras do país.",
   "project-geo360-features": "O sistema implementa o padrão ISO 19152 LADM, garantindo interoperabilidade e conformidade com as melhores práticas internacionais para administração de terras. Trabalhando em colaboração com engenheiros da Topocart, desenvolvemos uma solução abrangente que lida com relacionamentos complexos de posse de terra, direitos, restrições e responsabilidades (RRR) em um formato padronizado e interoperável.",
   "project-geo360-impact": "A implementação exigiu profundo entendimento tanto de modelagem de dados geoespaciais quanto de conhecimento do domínio de administração de terras, combinando expertise técnica com conformidade regulatória para criar um sistema que serve como referência para futuros projetos de administração de terras no Brasil.",
-  "project-geo360-technologies": "Tecnologias utilizadas: PostgreSQL, PostGIS, GeoServer, React, Node.js e modelos de dados compatíveis com LADM."
+  "project-geo360-technologies": "Tecnologias utilizadas: PostgreSQL, PostGIS, GeoServer, React, Node.js e modelos de dados compatíveis com LADM.",
+  "blog": "Blog",
+  "blog-title": "Notas de campo",
+  "blog-intro": "Agrimensura, GIS, bancos de dados espaciais e o software ao redor deles — o que aprendo enquanto construo.",
+  "blog-empty": "Nada publicado ainda.",
+  "read-post": "Ler post",
+  "min-read": "min de leitura",
+  "published": "Publicado em",
+  "reading-time": "Tempo de leitura",
+  "minutes": "minutos",
+  "about-article": "Sobre este artigo",
+  "linkedin-profile": "Perfil no LinkedIn",
+  "share": "Compartilhar",
+  "copy-link": "Copiar link",
+  "link-copied": "Link copiado",
+  "contents": "Índice"
 }
-

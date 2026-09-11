@@ -55,6 +55,9 @@ export default async function Home({ params: { lang } }: LangProps) {
             {intl["home-text-3"]}
           </p>
           <SocialLinks />
+          <Link href={`/${lang}/blog`} className="w-fit text-sm underline underline-offset-4 hover:text-foreground/80">
+            {intl["blog"]} →
+          </Link>
         </div>
       </div>
 
