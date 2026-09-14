@@ -1,0 +1,177 @@
+import type { ProjectMeta } from "./types";
+
+/** Display order on the home page. Text lives in ./en.ts, ./pt.ts and ./es.ts. */
+export const PROJECTS: ProjectMeta[] = [
+  {
+    slug: "skyforest",
+    category: "client",
+    client: "Skyforest (Sweden)",
+    clientShort: "Skyforest",
+    featured: true,
+    images: [
+      { src: "/skyport-1.png", width: 1600, height: 766 },
+      { src: "/skyport-2.png", width: 1600, height: 832 },
+      { src: "/skyport-3.png", width: 1600, height: 823 },
+    ],
+    links: [{ label: "app.skyforest.se", href: "https://app.skyforest.se", kind: "live" }],
+    stack: ["n8n", "Ordo", "Next.js", "MapLibre", "FastAPI", "PostgreSQL", "MinIO", "GeoServer", "Agisoft Metashape", "Windows worker fleet"],
+  },
+  {
+    slug: "mapping-sdk",
+    category: "client",
+    client: "UAI – Underwater Acoustics International",
+    clientShort: "UAI",
+    featured: true,
+    images: [
+      { src: "/mapping-sdk-1.jpg", width: 1600, height: 830 },
+      { src: "/mapping-sdk-2.jpg", width: 1600, height: 824 },
+      { src: "/mapping-sdk-3.png", width: 1600, height: 832 },
+    ],
+    links: [],
+    stack: ["Ordo", "n8n", "PDAL", "GDAL", "Entwine", "PotreeConverter", "MinIO", "PostgreSQL", "MapLibre", "Potree", "VitePress"],
+  },
+  {
+    slug: "weather-data-platform",
+    category: "team",
+    client: "Jane's Weather / ACM (Australia)",
+    clientShort: "Jane's Weather / ACM",
+    featured: true,
+    images: [],
+    links: [],
+    stack: ["React", "MapLibre", "PMTiles", "Python", "Argo Workflows", "Kubernetes", "Cloudflare Workers", "R2", "D1", "Supabase", "Vercel", "Kong", "Sentinel", "VitePress"],
+  },
+  {
+    slug: "ordo",
+    category: "product",
+    featured: true,
+    images: [],
+    links: [{ label: "territorial-dev/ordo", href: "https://github.com/territorial-dev/ordo", kind: "github" }],
+    stack: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Vitest", "Docker", "semantic-release"],
+  },
+  {
+    slug: "sentinel",
+    category: "product",
+    images: [
+      { src: "/sentinel-1.png", width: 1600, height: 799 },
+      { src: "/sentinel-2.png", width: 1600, height: 802 },
+      { src: "/sentinel-3.png", width: 1600, height: 2075 },
+    ],
+    links: [
+      { label: "RBMC status page", href: "https://sentinel-rbmc.paschendale.net/status/rbmc", kind: "live" },
+      { label: "territorial-dev/sentinel", href: "https://github.com/territorial-dev/sentinel", kind: "github" },
+    ],
+    stack: ["TypeScript", "Fastify", "Next.js", "PostgreSQL", "Undici", "Pino", "Prometheus", "MCP", "Docker", "Caddy"],
+  },
+  {
+    slug: "territorial-invoices",
+    category: "product",
+    images: [
+      { src: "/territorial-invoices-1.png", width: 1600, height: 872 },
+      { src: "/territorial-invoices-2.png", width: 1600, height: 834 },
+    ],
+    links: [],
+    stack: ["Next.js", "Fastify", "Prisma", "PostgreSQL", "Zod", "Playwright", "MCP", "Docker"],
+  },
+  {
+    slug: "territorial-assistant",
+    category: "rnd",
+    images: [
+      { src: "/territorial-assistant-1.png", width: 1600, height: 1528 },
+      { src: "/territorial-assistant-2.png", width: 1600, height: 1332 },
+    ],
+    links: [],
+    stack: ["TypeScript", "discord.js", "Drizzle", "PostgreSQL", "ActivityWatch", "Claude Code", "launchd"],
+  },
+  {
+    slug: "finances",
+    category: "rnd",
+    images: [
+      { src: "/finances-1.png", width: 1600, height: 1296 },
+      { src: "/finances-2.png", width: 1600, height: 1330 },
+      { src: "/finances-3.png", width: 1600, height: 1300 },
+      { src: "/finances-4.png", width: 1600, height: 1281 },
+    ],
+    links: [{ label: "paschendale/finances", href: "https://github.com/paschendale/finances", kind: "github" }],
+    stack: ["PostgreSQL", "PostgREST", "React", "Vite", "TypeScript", "Tailwind CSS", "shadcn/ui", "MCP", "Docker"],
+  },
+  {
+    slug: "ai-geospatial-query",
+    category: "client",
+    images: [],
+    links: [],
+    stack: ["FastAPI", "Python", "LangChain", "PostgreSQL", "PostGIS", "Express", "React", "TypeScript", "Stripe", "Docker", "Traefik"],
+  },
+  {
+    slug: "geo360-ladm",
+    category: "client",
+    client: "Topocart",
+    images: [{ src: "/geo360-ladm-preview.png", width: 1194, height: 1056 }],
+    links: [],
+    stack: ["PostgreSQL", "PostGIS", "GeoServer", "LADM (ISO 19152)", "Angular", "React", "Nest.js", "Django"],
+  },
+  {
+    slug: "dragonfly",
+    category: "client",
+    images: [
+      { src: "/dragonfly-1.png", width: 642, height: 388 },
+      { src: "/dragonfly-2.png", width: 636, height: 392 },
+      { src: "/dragonfly-3.png", width: 637, height: 391 },
+      { src: "/dragonfly-4.png", width: 634, height: 393 },
+      { src: "/dragonfly-5.png", width: 635, height: 393 },
+    ],
+    links: [
+      { label: "paschendale/libelula", href: "https://github.com/paschendale/libelula", kind: "github" },
+      { label: "paschendale/libelula-api", href: "https://github.com/paschendale/libelula-api", kind: "github" },
+      { label: "paschendale/user-management", href: "https://github.com/paschendale/user-management", kind: "github" },
+    ],
+    stack: ["React", "Mapbox", "Highcharts", "Express", "Prisma", "Django REST", "OAuth2", "PostGIS", "pg_tileserv", "Docker Swarm"],
+  },
+  {
+    slug: "geoserver-mobile-client",
+    category: "client",
+    images: [
+      { src: "/geoserver-mobile-client-1.png", width: 1115, height: 559 },
+      { src: "/geoserver-mobile-client-2.png", width: 538, height: 1116 },
+      { src: "/geoserver-mobile-client-3.png", width: 570, height: 1118 },
+      { src: "/geoserver-mobile-client-4.png", width: 562, height: 1116 },
+      { src: "/geoserver-mobile-client-5.png", width: 560, height: 1118 },
+    ],
+    links: [{ label: "paschendale/geoserver-mobile-client", href: "https://github.com/paschendale/geoserver-mobile-client", kind: "github" }],
+    stack: ["Ionic", "React", "TypeScript", "OpenLayers", "GeoServer REST", "Ionic Appflow"],
+  },
+  {
+    slug: "territorial-maps",
+    category: "product",
+    images: [{ src: "/territorial-maps.png", width: 1600, height: 862 }],
+    links: [{ label: "app.territorial.dev", href: "https://app.territorial.dev", kind: "live" }],
+    stack: ["Next.js", "MapLibre", "Cloudflare", "n8n", "GDAL", "GeoServer", "PostgreSQL"],
+  },
+  {
+    slug: "pointcloud-automation",
+    category: "product",
+    images: [{ src: "/pointcloud-processing.png", width: 2264, height: 1260 }],
+    links: [],
+    stack: ["n8n", "PDAL", "Entwine", "PotreeConverter", "GDAL", "Node.js", "Potree"],
+  },
+  {
+    slug: "geoportal-itabirito",
+    category: "client",
+    client: "Prefeitura de Itabirito (MG)",
+    clientShort: "Itabirito",
+    images: [{ src: "/geoportal-itabirito-preview.png", width: 636, height: 392 }],
+    links: [
+      { label: "itabirito.genteufv.com.br", href: "https://itabirito.genteufv.com.br/", kind: "live" },
+      { label: "paschendale/webgis-itabirito", href: "https://github.com/paschendale/webgis-itabirito", kind: "github" },
+    ],
+    stack: ["React", "TypeScript", "OpenLayers", "QGIS Server", "Docker"],
+  },
+  {
+    slug: "slope",
+    category: "rnd",
+    images: [],
+    links: [{ label: "paschendale/react-plotly-rlayers", href: "https://github.com/paschendale/react-plotly-rlayers", kind: "github" }],
+    stack: ["Next.js", "React", "rlayers (OpenLayers)", "Plotly", "PostgreSQL", "PostGIS", "node-postgres"],
+  },
+];
+
+export const PROJECT_SLUGS = PROJECTS.map((p) => p.slug);

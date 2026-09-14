@@ -20,6 +20,10 @@ export type BlogPostLabels = {
   copyLink: string;
   linkCopied: string;
   contents: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaPortfolio: string;
+  ctaEmail: string;
 };
 
 type TocItem = { id: string; text: string; level: 2 | 3 };
@@ -118,6 +122,25 @@ export default function BlogPost({ post, lang, labels }: { post: Post; lang: Loc
 
             <div className="blog-markdown leading-8 text-[1.05rem]">
               <div dangerouslySetInnerHTML={{ __html: html }} />
+            </div>
+
+            <div className="mt-10 rounded-lg border border-border bg-card p-6 flex flex-col gap-3">
+              <h2 className="text-lg font-semibold">{labels.ctaTitle}</h2>
+              <p className="text-foreground/80 leading-relaxed">{labels.ctaText}</p>
+              <div className="flex flex-row flex-wrap gap-3 mt-1">
+                <Link
+                  href={`/${lang}`}
+                  className="px-4 py-2 border border-input bg-background rounded-md text-sm transition-transform hover:scale-105 hover:bg-secondary"
+                >
+                  {labels.ctaPortfolio}
+                </Link>
+                <a
+                  href="mailto:victor@marotta.dev"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm transition-transform hover:scale-105 hover:opacity-90"
+                >
+                  {labels.ctaEmail}
+                </a>
+              </div>
             </div>
           </div>
 

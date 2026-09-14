@@ -46,7 +46,7 @@ async function readLocale(contentDir, locale, authors) {
       slug: fileSlug,
       title: data.title,
       description: data.description,
-      date: String(data.date).slice(0, 10),
+      date: (data.date instanceof Date ? data.date.toISOString() : String(data.date)).slice(0, 10),
       coverImage: data.coverImage ?? null,
       tags: data.tags ?? [],
       locale,

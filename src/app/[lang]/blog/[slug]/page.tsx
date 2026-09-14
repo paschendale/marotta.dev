@@ -34,6 +34,10 @@ export default async function BlogPostPage({ params: { lang, slug } }: LangSlugP
     copyLink: intl["copy-link"],
     linkCopied: intl["link-copied"],
     contents: intl["contents"],
+    ctaTitle: intl["blog-cta-title"],
+    ctaText: intl["blog-cta-text"],
+    ctaPortfolio: intl["check-out-projects"],
+    ctaEmail: intl["email"],
   };
   return <BlogPost post={post} lang={lang} labels={labels} />;
 }
