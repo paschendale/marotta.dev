@@ -42,14 +42,14 @@ N8N_ENABLE_EXECUTE_COMMAND=true
 NODES_EXCLUDE=[]
 N8N_BLOCK_ENV_ACCESS_IN_NODE=false
 N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES=false
-N8N_RESTRICT_FILE_ACCESS_TO=/
+N8N_RESTRICT_FILE_ACCESS_TO=
 ```
 
 Algumas dessas merecem uma nota, porque o raciocínio importa mais do que o nome da flag:
 
 - `N8N_RUNNERS_ENABLED=false` é a que precisa acertar primeiro. É tentador deixar os executores ligados e só configurá-los, mas um executor isolado rodando no próprio interpretador não vai herdar um ambiente cuidadosamente construído — caminhos do conda, bindings de biblioteca, qualquer coisa configurada especificamente para o container. Desabilitar os executores mantém a execução de código e de comandos no mesmo processo, contra o sistema de arquivos e ambiente reais do container, igual ao funcionamento do 1.x.
 - `N8N_ENABLE_EXECUTE_COMMAND=true` e `NODES_EXCLUDE=[]` precisam ser configuradas as duas — são dois controles separados sobre o mesmo nó, e configurar só uma deixa ele desabilitado.
-- `N8N_RESTRICT_FILE_ACCESS_TO=/` combinado com `N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES=false` é o par que restaura acesso irrestrito a arquivos; configurar só uma ainda deixa caminhos bloqueados.
+- `N8N_RESTRICT_FILE_ACCESS_TO=` combinado com `N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES=false` é o par que restaura acesso irrestrito a arquivos; configurar só uma ainda deixa caminhos bloqueados.
 
 Vale checar separadamente: releases menores do n8n 2.x mudaram a versão mínima exigida do Node.js mais de uma vez nos primeiros lançamentos da linha 2.x. Isso não é uma flag que você configura — é uma verificação de imagem base a fazer antes do deploy, não depois de algo falhar silenciosamente na inicialização do container.
 

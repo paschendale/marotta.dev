@@ -42,14 +42,14 @@ N8N_ENABLE_EXECUTE_COMMAND=true
 NODES_EXCLUDE=[]
 N8N_BLOCK_ENV_ACCESS_IN_NODE=false
 N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES=false
-N8N_RESTRICT_FILE_ACCESS_TO=/
+N8N_RESTRICT_FILE_ACCESS_TO=
 ```
 
 A few of these deserve a note, because the reasoning matters more than the flag name:
 
 - `N8N_RUNNERS_ENABLED=false` is the one to get right first. It's tempting to leave runners on and just configure them, but a sandboxed runner running in its own interpreter will not inherit a carefully built environment — conda paths, library bindings, anything set up specifically for the container. Disabling runners keeps Code and Execute Command execution in-process, against the container's real filesystem and environment, matching how 1.x worked.
 - `N8N_ENABLE_EXECUTE_COMMAND=true` and `NODES_EXCLUDE=[]` both need to be set — they're two separate gates on the same node, and setting only one leaves it disabled.
-- `N8N_RESTRICT_FILE_ACCESS_TO=/` combined with `N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES=false` is the pair that restores unrestricted file access; setting only one still leaves paths blocked.
+- `N8N_RESTRICT_FILE_ACCESS_TO=` combined with `N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES=false` is the pair that restores unrestricted file access; setting only one still leaves paths blocked.
 
 Worth checking separately: n8n 2.x minor releases have moved the minimum required Node.js version more than once during the 2.x line's early releases. That's not a flag you can set — it's a base image check to run before you deploy, not after something fails silently at container startup.
 
