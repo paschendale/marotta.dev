@@ -29,7 +29,7 @@ Ri por um bom minuto. Alguém montou uma máquina pra aplicar golpe em freelance
 
 ## O que a recusa entrega
 
-Não tenho como ver o pipeline do Ken. Só tenho a recusa, escrita pelo único leitor de um prompt que eu nunca vou ver. Levando ela ao pé da letra, o formato fica claro: endereços tirados de commits do GitHub, uma lista de perfis parados no Upwork, um prompt que mantém a oferta vaga e troca as palavras que um filtro de spam pegaria. E um loop. Cada vez que o modelo recusava, a primeira frase da recusa ia pra uma lista de "aberturas proibidas" e o job rodava de novo. Pelo menos dez vezes, pela conta do próprio modelo.
+Não tenho como ver o pipeline do Ken. Só tenho o relato do modelo sobre ele. Levando ela ao pé da letra, o formato fica claro: endereços tirados de commits do GitHub, uma lista de perfis parados no Upwork, um prompt que mantém a oferta vaga e troca as palavras que um filtro de spam pegaria. E um loop. Cada vez que o modelo recusava, a primeira frase da recusa ia pra uma lista de "aberturas proibidas" e o job rodava de novo. Pelo menos dez vezes, pela conta do próprio modelo.
 
 Essa lista é a minha parte favorita. Quem escreveu isso leu cada recusa como problema de redação. O modelo estava recusando o serviço, e o operador continuava tratando isso como escolha de palavras.
 
@@ -43,11 +43,11 @@ Então uma recusa deveria parar o job e colocar a resposta na frente de uma pess
 
 ## Eu já tinha visto essa proposta três vezes
 
-Depois que entendi o que procurar, voltei na minha caixa de entrada. O mesmo formato já tinha chegado três vezes no último mês, sempre sem dizer qual era a ideia:
+Depois que entendi o que procurar, achei o mesmo formato três vezes na minha caixa de entrada do último mês:
 
 - **Setembro.** Um "engenheiro de software sênior baseado no Japão" encontrou meu GitHub e depois meu perfil no Upwork. Eu cuidaria da comunicação com o cliente, ele do desenvolvimento, remuneração combinada entre nós. Pedi o LinkedIn dele e o que exatamente ele tinha em mente. A resposta foi, mais ou menos, "vamos fazer uma call".
 - **Uma semana depois.** Alguém que assinava com um nome e se apresentava com outro tinha "uma ideia de negócio" pra "gerar renda extra sem exigir investimento inicial significativo". Não disse qual era. Queria uma call curta.
-- **Outubro.** Outro desenvolvedor full-stack sênior no Japão compartilhou um PDF no Drive chamado "Collaboration Proposal". Ele repetiu minhas estatísticas do Upwork (Job Success Score, valor por hora, ganhos, horas) e observou que meu último trabalho concluído lá tinha mais de um ano. Duas a três horas por semana. "Um simples Sim ou Não é tudo de que preciso."
+- **Outubro.** Outro desenvolvedor full-stack sênior no Japão compartilhou um PDF no Drive chamado "Collaboration Proposal". Ele repetiu minhas estatísticas do Upwork e observou que meu último trabalho concluído lá tinha mais de um ano. Duas a três horas por semana. "Um simples Sim ou Não é tudo de que preciso."
 
 Nenhum disse qual era o negócio, então daqui em diante é inferência. Ao lado da recusa do Ken, parecem o mesmo esquema: pegar emprestado o perfil consolidado de um freelancer no Upwork, fazer propostas e entregar com esse nome, e pagar uma parte ao dono. Os termos do Upwork não permitem que outra pessoa use a sua conta. O cliente acha que contratou você, e se algo der errado, é o seu nome que está lá. Reportagens sobre esquemas de falsos trabalhadores de TI descrevem um padrão parecido, com personas inventadas e contas emprestadas. Não sei dizer quem está por trás desses.
 
@@ -55,10 +55,10 @@ A recusa do Ken já tinha resumido numa frase: se a ideia não pode ser escrita,
 
 ## Por que esse é pessoal
 
-A piada tem mais graça porque eu construo esse tipo de máquina. Já [escrevi aqui](/pt/blog/prospecting-geospatial-firms-with-my-own-algorithm-instead) sobre o assistente de vendas do meu daemon. Ele encontra empresas de geotecnologia, pesquisa cada uma e escreve rascunhos de prospecção na minha voz com o Claude. Entra informação pública e saem e-mails escritos por modelo, em volume. Num diagrama, parece o do Ken. Três salvaguardas fazem a diferença:
+A piada tem mais graça porque eu construo esse tipo de máquina. Já [escrevi aqui](/pt/blog/prospecting-geospatial-firms-with-my-own-algorithm-instead) sobre o assistente de vendas do meu daemon. Ele encontra empresas de geotecnologia, pesquisa cada uma e escreve rascunhos de prospecção na minha voz com o Claude. Num diagrama, parece o do Ken. Três salvaguardas fazem a diferença:
 
 - **Saída estruturada que falha fechada.** Toda chamada ao Claude é um prompt de sistema mais um JSON schema, e o código valida a resposta antes de qualquer coisa usá-la. Uma recusa, ou qualquer outra coisa que não seja um rascunho válido, não vira e-mail. Mas o meu próprio runner não é inocente. Ele tenta de novo uma vez quando a saída é inválida, com o erro de validação anexado, e pra ele uma recusa parece saída inválida. Depois disso desiste, guarda o que voltou e marca a chamada como falha. Ou seja, falha fechado, mas ainda não distingue uma recusa de um erro de formato, e depois desse e-mail acho que deveria.
-- **Quem envia é uma pessoa.** Os rascunhos caem no Gmail como rascunhos. Nada sai até eu ler aquele e-mail exato e clicar em enviar. Com esse único passo no pipeline do Ken, o e-mail dele teria sido só um rascunho engraçado na caixa de saída de alguém.
+- **Quem envia é uma pessoa.** Os rascunhos caem no Gmail como rascunhos. Nada sai até eu ler aquele e-mail exato e clicar em enviar. Com esse passo, o e-mail do Ken teria sido só um rascunho engraçado na caixa de saída de alguém.
 - **Todo detalhe pessoal tem fonte.** Um rascunho só pode afirmar o que a própria empresa disse recentemente ou o que uma página mostrou quando conferida no mesmo dia, e lista os fatos em que se apoia, pra eu ver no que estou colocando meu nome. O prompt do Ken, se a recusa descreve bem, faz o contrário e esconde o que está sendo oferecido. Se um dia meu assistente precisar esconder o que eu estou oferecendo, o problema sou eu, não o prompt.
 
 ## Se você é freelancer com perfil parado

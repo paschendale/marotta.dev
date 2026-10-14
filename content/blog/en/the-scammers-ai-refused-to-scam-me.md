@@ -29,7 +29,7 @@ I laughed for a good minute. Somebody built a machine to scam freelancers, the A
 
 ## What the refusal gives away
 
-I can't see Ken's pipeline. All I have is the refusal, written by the only reader of a prompt I'll never see. Taken at its word, the shape is clear: addresses from GitHub commits, a list of quiet Upwork profiles, a prompt that keeps the offer vague and swaps out words a spam filter would catch. And a loop. Each time the model refused, its opening sentence went onto a list of "banned openings" and the job ran again. At least ten times, by the model's own count.
+I can't see Ken's pipeline. All I have is the model's account of it. Taken at its word, the shape is clear: addresses from GitHub commits, a list of quiet Upwork profiles, a prompt that keeps the offer vague and swaps out words a spam filter would catch. And a loop. Each time the model refused, its opening sentence went onto a list of "banned openings" and the job ran again. At least ten times, by the model's own count.
 
 That list is my favourite part. Whoever wrote it read every refusal as a copywriting problem. The model was saying no to the job, and the operator kept treating it as a word choice.
 
@@ -43,11 +43,11 @@ So a refusal should stop the job and put the answer in front of a person. Someti
 
 ## I'd seen this pitch three times already
 
-Once I knew what to look for, I went back through my mail. The same shape had reached me three times in the past month, never with the idea spelled out:
+Once I knew what to look for, I found the same shape three times in my mail from the past month:
 
 - **September.** A "senior software engineer based in Japan" found my GitHub, then my Upwork profile. I'd handle client communication, he'd handle development, compensation agreed together. I asked for his LinkedIn and what exactly he had in mind. The answer was, more or less, "let's have a call instead".
 - **A week later.** Someone who signed with one name and introduced himself with another had "a business idea" for "additional income without requiring a significant upfront investment". He didn't say what it was. He wanted a short call.
-- **October.** Another senior full-stack developer in Japan shared a Drive PDF called "Collaboration Proposal". He quoted my Upwork stats back to me (Job Success Score, rate, earnings, hours) and noted that my last completed job there was over a year ago. Two to three hours a week. "A simple Yes or No is all I need."
+- **October.** Another senior full-stack developer in Japan shared a Drive PDF called "Collaboration Proposal". He quoted my Upwork stats back to me and noted that my last completed job there was over a year ago. Two to three hours a week. "A simple Yes or No is all I need."
 
 None of them said what the deal was, so from here on it's inference. Next to Ken's refusal they read like the same scheme: borrow a freelancer's established Upwork profile, bid and deliver under that name, pay the owner a cut. Upwork's terms don't let someone else use your account. The client believes they hired you, and if anything goes wrong it's your name on it. Public reports on fake IT-worker schemes describe a similar pattern of invented personas and borrowed accounts. I can't tell who is behind these.
 
@@ -55,10 +55,10 @@ Ken's refusal had already put it in one sentence: if the idea can't be named in 
 
 ## Why this one is personal
 
-The joke lands harder because I build this kind of machine. I've [written before](/en/blog/prospecting-geospatial-firms-with-my-own-algorithm-instead) about the sales assistant in my daemon. It finds geospatial firms, researches them and drafts outreach in my voice with Claude. Public information goes in and model-written emails come out, at volume. On a diagram it looks like Ken's. Three safeguards make it different:
+The joke lands harder because I build this kind of machine. I've [written before](/en/blog/prospecting-geospatial-firms-with-my-own-algorithm-instead) about the sales assistant in my daemon. It finds geospatial firms, researches them and drafts outreach in my voice with Claude. On a diagram it looks like Ken's. Three safeguards make it different:
 
 - **Structured output that fails closed.** Every Claude call is a system prompt plus a JSON schema, and code validates the answer before anything uses it. A refusal, or anything else that isn't a valid draft, produces no email. My own runner isn't innocent, though. It retries once on invalid output with the validation error appended, and to it a refusal looks like invalid output. After that it gives up, keeps what came back and fails the call. So it fails closed, but it can't yet tell a refusal from a formatting slip, and after this email I think it should.
-- **A person sends.** Drafts land in Gmail as drafts. Nothing leaves until I've read that exact email and pressed send. With that one step in Ken's pipeline, his email would have been a funny draft in someone's outbox.
+- **A person sends.** Drafts land in Gmail as drafts. Nothing leaves until I've read that exact email and pressed send. With that step, Ken's email would have been a funny draft in someone's outbox.
 - **Every personal detail has a source.** A draft may only state what the firm said itself recently or what a page showed when checked that same day, and it lists the facts it relies on, so I can see what I'm putting my name to. Ken's prompt, if the refusal describes it right, does the opposite and hides what's on offer. If my assistant ever needs to hide what I'm offering, I'm the problem, not the prompt.
 
 ## If you're a freelancer with a quiet profile
