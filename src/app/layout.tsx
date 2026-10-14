@@ -5,7 +5,6 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import SwitchLang from "@/components/ui/switch-lang";
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://marotta.dev"),
@@ -65,7 +64,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <GoogleAnalytics gaId="GTM-5PGF26TQ" />
+        <script
+          defer
+          src="https://stats.marotta.dev/script.js"
+          data-website-id="e8383148-dbf5-4c52-a60f-18816032e5d1"
+        />
         <link rel="canonical" href="https://marotta.dev" />
         <script
           type="application/ld+json"
