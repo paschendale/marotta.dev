@@ -326,45 +326,33 @@ export const es: Record<string, ProjectText> = {
   },
 
   "ai-geospatial-query": {
-    title: "Plataforma de Consulta Geoespacial en Lenguaje Natural",
-    tagline: "Un producto donde los usuarios preguntan sobre datos geográficos en lenguaje natural y reciben respuestas, gráficos y mapas, generados por un LLM sobre PostGIS.",
+    title: "Plataforma de consultas geoespaciales en lenguaje natural",
+    tagline: "Un producto en el que las personas hacen preguntas sobre datos geográficos con palabras sencillas y reciben respuestas, gráficos y mapas.",
     summary:
-      "Trabajo para un cliente bajo NDA, así que nombres y datasets quedan fuera: un motor de consulta texto-a-SQL sobre datos públicos multijurisdiccionales, la plataforma de producto a su alrededor (API, aplicación web, SDKs, facturación) y la infraestructura en la que corre. Lideré su concepción e ingeniería con el equipo de Territorial.",
-    role: "Ingeniero principal: concepción, motor de consulta, plataforma de producto e infraestructura, equipo Territorial",
-    note: "Trabajo protegido por NDA; el producto, el cliente y los datasets no se nombran intencionadamente.",
+      "Una startup de IA geoespacial que cofundé, bajo un NDA estricto, por lo que nombres, datos y tecnologías quedan fuera. Construí sus primeras versiones, el sistema de consultas en lenguaje natural, la interfaz y la experiencia de pago, y monté su infraestructura.",
+    role: "Cofundador: MVPs, sistema de consultas, interfaz, pagos e infraestructura",
+    note: "Bajo un NDA estricto: la empresa, sus datos, sus clientes y sus tecnologías no se nombran a propósito.",
     highlights: [
-      "Motor de consulta: lenguaje natural → SQL consciente del esquema → validación → PostGIS → respuesta en lenguaje natural, en una sola llamada",
-      "Dos backends de LLM intercambiables tras una interfaz REST idéntica; restricción por esquema para que una conversación solo toque las fuentes de datos que le fueron concedidas",
-      "Sandbox analítico: un bucle de herramientas acotado para análisis posteriores (razones, rankings, comparaciones), gráficos, mapas y un intérprete de código opcional",
-      "Plataforma de producto con organizaciones, claves de API, medición de uso, rate limits, webhooks, facturación por suscripción, SDKs en TypeScript y Python y sitio de documentación",
+      "Las preguntas en palabras sencillas se convierten en consultas espaciales verificadas, respondidas en texto, gráficos o mapas",
+      "Cada conversación se queda dentro de los datos a los que tiene acceso",
+      "Las preguntas siguientes (comparaciones, rankings, proporciones) parten de la respuesta anterior",
+      "El producto alrededor: la interfaz donde se pregunta y la experiencia de suscripción y pago",
     ],
     sections: [
       {
-        heading: "El motor de consulta",
+        heading: "Qué hace",
         body: [
-          "El motor es un servicio FastAPI sobre PostgreSQL/PostGIS con datasets públicos a nivel federal, estatal y municipal: financiación de campañas, demografía censal, registros y licencias de empresas, permisos, criminalidad, impuestos. La parte difícil de texto-a-SQL sobre datos así no es el modelo; es darle al modelo un esquema sobre el que pueda razonar. Diseñé la capa de datos: cómo se relacionan jurisdicciones de distintos niveles, cómo se exponen y simplifican las geometrías, qué columnas tienen significado y cómo se describe todo eso para que el SQL generado sea correcto a la primera con más frecuencia. La coincidencia aproximada de nombres usa similitud por trigramas en la base de datos, así que lugares y candidatos mal escritos siguen resolviéndose.",
-          "Una pregunta se convierte en un candidato SQL, se valida y restringe (los esquemas se permiten por conversación, los esquemas internos nunca pueden consultarse), se ejecuta y se resume de vuelta en lenguaje. El backend de LLM es intercambiable: una implementación con modelos de OpenAI vía LangChain, otra con el framework de agentes de Google y Gemini, ambas tras el mismo contrato REST con historial de conversación, de modo que comparar proveedores fue configuración y no una reescritura. Un modo analítico añade un bucle de agente acotado sobre datos recién obtenidos, con timeouts por consulta, límites de reintentos y un plazo de extremo a extremo, produciendo porcentajes, rankings, gráficos y mapas.",
-        ],
-      },
-      {
-        heading: "El producto alrededor",
-        body: [
-          "Un motor de consulta no es un producto. También lideré la plataforma que lo convierte en uno: una API Express con PostgreSQL/PostGIS en capas de controllers, services y repositories, una aplicación web React para chat y gestión de conversaciones, SDKs en TypeScript y Python para acceso programático, organizaciones y equipos, claves de API, medición de uso y rate limiting, un sistema de webhooks para notificaciones de eventos, facturación por suscripción vía Stripe y un sitio de documentación.",
-        ],
-      },
-      {
-        heading: "Infraestructura",
-        body: [
-          "Todo corre como stacks de Docker Compose tras Traefik, con entornos separados de desarrollo, beta y producción, actualización automática de imágenes, una capa de métricas y BI y Sentinel vigilando el conjunto. Los secretos están acotados por servicio y se cargan desde un único archivo de entorno para que la configuración siga siendo legible a medida que crece el stack. Las llamadas que llevan datos de clientes a endpoints externos de modelos resuelven sus destinos en modo fail-closed: producción se niega a correr sin un endpoint explícito y nunca recurre a uno público.",
+          "Los datos geográficos y estadísticos públicos son ricos y casi inutilizables para quien no sabe escribir consultas sobre muchas fuentes, cada una con sus jurisdicciones y geometrías. Lo difícil de responder preguntas sobre datos así no es el modelo de lenguaje. Es describir los datos para que el modelo pueda razonar sobre ellos, y mantener cada respuesta dentro de los datos que ese usuario puede ver.",
+          "Cofundé la empresa y construí sus primeras versiones. Ideé el sistema de consultas, en el que una pregunta se convierte en una consulta espacial verificada y limitada a las fuentes de datos concedidas a la conversación, que se ejecuta y vuelve como respuesta, gráfico o mapa. También ideé la interfaz y la experiencia de pago y su integración, y monté la infraestructura en la que funciona.",
         ],
       },
     ],
     flow: [
-      { label: "Pregunta", sub: "lenguaje natural, vía app web o SDK" },
-      { label: "LLM", sub: "generación de SQL consciente del esquema" },
-      { label: "Validación", sub: "esquemas permitidos · consulta restringida" },
-      { label: "PostGIS", sub: "ejecución espacial" },
-      { label: "Respuesta", sub: "texto · gráfico · mapa · análisis" },
+      { label: "Pregunta", sub: "con palabras sencillas" },
+      { label: "Modelo de lenguaje", sub: "escribe la consulta" },
+      { label: "Verificación", sub: "solo los datos concedidos" },
+      { label: "Consulta espacial" },
+      { label: "Respuesta", sub: "texto · gráfico · mapa" },
     ],
   },
 

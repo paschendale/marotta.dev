@@ -119,10 +119,12 @@ export default function ProjectPage({ project, lang, intl }: { project: Project;
                   })}
                 </div>
               )}
-              <div className="mt-5 pt-4 border-t border-border">
-                <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground mb-3">{intl["stack"]}</p>
-                <StackChips items={project.stack} />
-              </div>
+              {project.stack.length > 0 && (
+                <div className="mt-5 pt-4 border-t border-border">
+                  <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground mb-3">{intl["stack"]}</p>
+                  <StackChips items={project.stack} />
+                </div>
+              )}
             </div>
           </aside>
         </div>

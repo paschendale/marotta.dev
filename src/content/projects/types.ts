@@ -1,4 +1,4 @@
-export type ProjectCategory = "client" | "product" | "rnd" | "team";
+export type ProjectCategory = "client" | "product" | "rnd" | "team" | "venture";
 
 export type ProjectLink = { label: string; href: string; kind: "live" | "github" | "docs" };
 

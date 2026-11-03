@@ -26,7 +26,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
       "Lead engineer for Skyport, Skyforest's photogrammetry operations platform, on n8n, Ordo and a distributed Windows worker fleet.",
       "Lead engineer for MapPrism, a LiDAR and bathymetry processing platform for UAI, with fifteen typed executors and preset pipelines.",
       "Lead engineer for Jane's Weather / ACM: built the weather map runtime and its data pipelines, then led development, DevOps, monitoring and documentation for the whole platform.",
-      "Lead engineer behind a natural-language geospatial query product: text-to-SQL engine, product platform and infrastructure.",
+      "Co-founder of a geospatial AI startup (under NDA): built its MVPs, its natural-language query system, interface, payments and infrastructure.",
       "Author of Ordo (orchestration control plane) and Sentinel (synthetic monitoring), both open source and in production.",
     ],
   },

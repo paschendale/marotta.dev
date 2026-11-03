@@ -96,10 +96,10 @@ export const PROJECTS: ProjectMeta[] = [
   },
   {
     slug: "ai-geospatial-query",
-    category: "client",
+    category: "venture",
     images: [],
     links: [],
-    stack: ["FastAPI", "Python", "LangChain", "PostgreSQL", "PostGIS", "Express", "React", "TypeScript", "Stripe", "Docker", "Traefik"],
+    stack: [], // under a strict NDA: no stack
   },
   {
     slug: "geo360-ladm",
